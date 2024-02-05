@@ -43,3 +43,9 @@ STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 
 #define TRUE 1
 #define FALSE 0
+
+#ifdef KEXPORT
+#define KAPI __attribute__((visibility("default")))
+#else
+#define KAPI
+#endif
