@@ -13,7 +13,7 @@ echo "Files:" $cFilenames
 
 set assembly engine
 set compilerFlags -g -shared -fdeclspec -fPIC
-set includeFlags -Isrc
+set includeFlags -Isrc -I./src/core/
 set linkerFlags "-L/usr/lib -L/usr/X11R6/lib -lGL -lX11"
 set defines "-D_DEBUG -DKEXPORT"
 
