@@ -1,13 +1,17 @@
+#include "../../engine/src/core/application.h"
 #include "../../engine/src/core/logger.h"
+#include <stdio.h>
 
 int main(void) {
 
-  KFATAL("test message: %f", 3.44f);
-  KERROR("test message: %f", 3.44f);
-  KWARN("test message: %f", 3.44f);
-  KINFO("test message: %f", 3.44f);
-  KDEBUG("test message: %f", 3.44f);
-  KTRACE("test message: %f", 3.44f);
+  Application app;
+
+  if (app_init(&app) != TRUE) {
+    return -1;
+  }
+
+  app_run(&app);
+  app_cleanup(&app);
 
   return 0;
 }
